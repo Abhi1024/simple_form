@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+<form action="Form_Validation.html" onsubmit="return validate()" method="POST">
+
+    <input type="text" id="firstname" placeholder="First Name"><br><br>
+    <input type="text" id="lastname" placeholder="Last Name"><br><br>
+    <input type="email" id="email" placeholder="Email"><br><br>
+    Male <input type="checkbox" name="Male" id="male" placeholder="Male"><br><br>
+    Female <input type="checkbox" name="female" id="female" placeholder="Female"><br><br>
+    <select id="opt">
+        <option>C</option>
+        <option>C++</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>Javascript</option>
+    </select><br><br>
+
+    <button>Submit</button>
+
+</form>
+
+<script>
+
+    function name()
+    {
+        var firstname = document.getElementById('firstname');
+        var lastname = document.getElementById('lastname');
+        var email = document.getElementById('email');
+        var male = document.getElementById('male');
+        var female = document.getElementById('female');
+        var opt = document.getElementById('opt');
+    }
+
+    function validate()
+    {
+        name();
+
+        if(firstname.value.trim() === "")
+        {
+            alert("Firstname Required");
+            firstname.focus();
+            return false;
+        }
+        else if(lastname.value.trim() === "")
+        {
+            alert("Lastname Required");
+            lastname.focus();
+            return false;
+        }
+        else if(email.value.trim() === "")
+        {
+            alert("Email Required");
+            email.focus();
+            return false;
+        }
+        else if(male.checked === false && female.checked === false)
+        {
+            alert("Gender Required");
+            male.focus();
+            return false;
+        }
+        else if(opt.selectedIndex === 0)
+        {
+            alert("Subject Required");
+            opt.focus();
+            return false;
+        }
+    }
+
+</script>
+
+<!-- <script>
+
+    function name()
+    {
+        var firstname = document.getElementById('firstname');
+        var lastname = document.getElementById('lastname');
+        var email = document.getElementById('email');
+        var male = document.getElementById('male');
+        var opt = document.getElementById('opt');
+    }
+
+    function validate()
+    {
+
+        name();
+
+        if(firstname.value.trim() === "")
+        {
+            alert("Firstname Required");
+            firstname.focus();
+            return false;
+        }
+        else if(lastname.value.trim() === "")
+        {
+            alert("Lastname Required");
+            lastname.focus();
+            return false;
+        }
+        else if (email.value.trim() === '')
+        {
+            alert("Email Required");
+            email.focus();
+            return false;
+        }
+        else if(male.checked === false && female.checked === false)
+        {
+            alert("Gender Required");
+            male.focus();
+            return false;
+        }
+        else if(opt.selectedIndex === 0)
+        {
+            alert("Subject Required");
+            opt.focus();
+            return false;
+        }
+
+    }
+
+</script> -->
+
+</body>
+</html>
